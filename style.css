@@ -1,0 +1,45 @@
+body {
+  background-color: black;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Consolas, monaco, monospace;
+}
+
+h1 {
+  font-weight: bold;
+  color: lime;
+  font-size: 40px; /* Increase the font size */
+}
+
+.error {
+  color: red;
+  margin-top: 10px; /* Increase the margin-top */
+  font-size: 18px; /* Increase the font size */
+}
+
+input {
+  background-color: black;
+  color: lime;
+  border-color: lime;
+  padding: 10px; /* Increase the padding */
+  font-size: 16px; /* Increase the font size */
+}
+
+input:focus {
+  border-color: lime;
+  outline: none;
+}
+
+button {
+  background-color: black;
+  color: lime;
+  border: none;
+  padding: 10px 10px; /* Increase the padding */
+  cursor: pointer;
+  font-size: 16px; /* Increase the font size */
+}
+
+button:focus {
+  outline: none;
+}

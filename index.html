@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wongo Poople</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>WongoPoopleProject</h1>
+    <script src="https://kit.fontawesome.com/5ce862850e.js" crossorigin="anonymous"></script>
+  <h1>Wongo Poople</h1>
+  <input type="text" id="codeInput" placeholder="Enter code">
+  <button onclick="redirect()"><i class="fa-solid fa-caret-right fa-2xl fa-beat" style="color: lime"></i></button>
+  <p id="error" class="error"></p>
+
+  <script>
+    function redirect() {
+      var code = document.getElementById("codeInput").value;
+      var errorElement = document.getElementById("error");
+      
+      if (code) {
+        // Check if the corresponding HTML file exists
+        var xhr = new XMLHttpRequest();
+        xhr.open("HEAD", code + ".html", true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+              window.location.href = code + ".html";
+            } else {
+              errorElement.textContent = "Error: Entered code not found";
+            }
+          }
+        };
+        xhr.send();
+      } else {
+        errorElement.textContent = "Error: Please enter a code.";
+      }
+    }
+  </script>
 </body>
 </html>
